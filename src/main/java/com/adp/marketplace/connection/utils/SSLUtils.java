@@ -137,10 +137,9 @@ public class SSLUtils {
 
 		CloseableHttpClient httpclient = null;
 		
-		//System.out.println("SSLUTILS.ilePath: "+ filePath );
+		//System.out.println("SSLUTILS.filePath: "+ filePath );
 		//System.out.println("SSLUTILS.storePassword[] " + storePassword.toString());
 		//System.out.println("SSLUTILS.keyPassword" + keyPassword.toString() );
-		
 		
 		try {
 					

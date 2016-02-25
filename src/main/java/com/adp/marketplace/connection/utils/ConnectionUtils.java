@@ -249,7 +249,7 @@ public class ConnectionUtils {
 					stringBuffer.append(line);
 				}
 				
-				System.out.println( "\n Server Response: " +  stringBuffer.toString() + "\n"); 
+				System.out.println( "\nServer Response: " +  stringBuffer.toString() + "\n"); 
 				
 			} catch ( UnsupportedOperationException e ) {
 				throw new Exception(e);
