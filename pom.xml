@@ -27,8 +27,7 @@
  	<packaging>jar</packaging>
 
 	<name>ADPConnection</name>
-	<!-- TODO GITHUB URL-->
-  	<url>GITHUB URL</url>
+  	<url>https://github.com/adplabs/adp-connection-java.git adp-connection-java</url>
 	<description>ADP Connection Library</description>
 
 	<organization>
@@ -55,23 +54,7 @@
 			<timezone>+1</timezone>
 		</developer>
 	</developers>
-
-	<!--  -->
-	<!-- 
-	<mailingLists>
-		<mailingList>
-      		<name>ADP Libraries User List</name>
-      		<subscribe>ADP-Libraries-users-subscribe@adp.com</subscribe>
-      		<unsubscribe>ADP-Libraries-users-unsubscribe@adp.com</unsubscribe>
-      		<post>ADP-Libraries-users-@adp.com</post>
-      		<archive>http://mail-archives.adp.com/XXXXXXX/ADP-Libraries-users/</archive>
-      		<otherArchives>
-		        <otherArchive></otherArchive>
-		        <otherArchive></otherArchive>
-      		</otherArchives>
-    	</mailingList>
-	</mailingLists>
-	 -->
+	
 	<distributionManagement>
     	<repository>
       		<id>ADP-repository</id>
@@ -79,13 +62,7 @@
       		<!-- TODO -->
       		<!-- <url>https://repository.adp.com/repository/maven2</url> -->
     	</repository>
-    	<!-- TODO -->
-		<snapshotRepository>
-      		<id>apache.snapshots.https</id>
-     		<name>ADP Marketplace  Development Snapshot Repository</name>
-      		<url>https://repository.apache.org/content/repositories/snapshots</url>
-    	</snapshotRepository>
-    	<!-- TODO -->
+ 
     	<site>
       		<id>ADP Website</id>
       		<name>ADP API Documentation Website</name>
@@ -93,7 +70,6 @@
     	</site>	
   	</distributionManagement>
 
-	<!-- TODO -->
 	<issueManagement>
 		<system>Zendesk</system>
 		<url>https://partnersupport.adp.com</url>

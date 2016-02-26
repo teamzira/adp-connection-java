@@ -131,7 +131,6 @@ public class AuthorizationCodeConnection implements ADPAPIConnection {
 				if ( httpResponse != null ) {		
 					
 					responseStatusCode = httpResponse.getStatusLine().getStatusCode();
-					System.out.println("\n HTTP STATUS: " + httpResponse.getStatusLine() );
 					
 					if ( responseStatusCode == Constants.HTTP_SUCCESS ) {
 						
@@ -160,8 +159,12 @@ public class AuthorizationCodeConnection implements ADPAPIConnection {
 			throw new ConnectionException(e);
 		} finally {
 			try {
-				httpResponse.close();
-				httpClient.close();
+				if ( httpResponse != null ) {	
+					httpResponse.close();
+				}
+				if ( httpClient != null ) {
+					httpClient.close();
+				}
 			} catch (IOException e) {
 				throw new ConnectionException(e);
 			}	

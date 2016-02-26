@@ -46,7 +46,7 @@ public class ADPAPIConnectionFactory {
 	
 	
 	/**
-	 * this method returns a singleton instance of ADPAPIConnectionFactory class
+	 * Returns a singleton instance of ADPAPIConnectionFactory class
 	 * 
 	 * @return ADPAPIConnection an Instance of {@link ADPAPIConnectionFactory}
 	 */
@@ -114,7 +114,7 @@ public class ADPAPIConnectionFactory {
 		
 	
 	/**
-	 * this method returns an instance of Connection object based on the authorization grant type 
+	 * Returns an instance of Connection object based on the authorization grant type 
 	 * 
 	 * @param grantTypeValue
 	 * @return ADPAPIConnection

@@ -21,9 +21,9 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import com.adp.marketplace.core.connection.test.ADPAPIConnectionFactoryTest;
-import com.adp.marketplace.core.connection.test.AuthorizationCodeConnectionTest;
-import com.adp.marketplace.core.connection.test.ClientCredentialsConnectionTest;
+import com.adp.marketplace.core.connection.core.ADPAPIConnectionFactoryTest;
+import com.adp.marketplace.core.connection.core.AuthorizationCodeConnectionTest;
+import com.adp.marketplace.core.connection.core.ClientCredentialsConnectionTest;
 
 
 /**

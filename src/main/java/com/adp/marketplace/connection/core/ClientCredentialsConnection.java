@@ -137,9 +137,6 @@ public class ClientCredentialsConnection implements ADPAPIConnection {
 						HttpEntity entity = httpResponse.getEntity();
 						Header[] headers = httpResponse.getAllHeaders();
 						
-						
-						System.out.println("HTTP STATUS: " + httpResponse.getStatusLine());
-						
 					} else{
 							isConnectionAlive = false;
 						
@@ -157,8 +154,12 @@ public class ClientCredentialsConnection implements ADPAPIConnection {
 			throw new ConnectionException(e);
 		} finally {
 			try {
-				httpResponse.close();
-				httpClient.close();
+				if ( httpResponse != null ) {	
+					httpResponse.close();
+				}
+				if ( httpClient != null ) {
+					httpClient.close();
+				}
 			} catch (IOException e) {
 				throw new ConnectionException(e);
 			}

@@ -214,7 +214,9 @@ public class ConnectionUtils {
 			throw new Exception(e);
 		} finally {
 			try {
-				response.close();
+				if ( response != null) {
+					response.close();
+				}
 			} catch (IOException e) {
 				throw new Exception(e);
 			}
@@ -249,8 +251,6 @@ public class ConnectionUtils {
 					stringBuffer.append(line);
 				}
 				
-				System.out.println( "\nServer Response: " +  stringBuffer.toString() + "\n"); 
-				
 			} catch ( UnsupportedOperationException e ) {
 				throw new Exception(e);
 			} catch ( IOException e ) {
@@ -264,7 +264,7 @@ public class ConnectionUtils {
 			}
 		}
 		
-		if ( stringBuffer.length() > 0 ) {
+		if ( stringBuffer != null && stringBuffer.length() > 0 ) {
 			response = stringBuffer.toString();
 		}
 			
