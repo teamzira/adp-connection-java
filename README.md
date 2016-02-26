@@ -1,5 +1,5 @@
 
-# ADP Client Connection Library for Java
+## ADP Client Connection Library for Java
 The ADP Client Connection Library is intended to simplify and aid the process of authenticating, authorizing and connecting to the ADP Marketplace API Gateway. The Library includes couple of sample applications that can be run out-of-the-box to connect to the ADP Marketplace API **test** gateway.
 
 There are two ways of installing and using this library:
@@ -15,10 +15,10 @@ There are two ways of installing and using this library:
 **Clone from Github**
 
 You can either use the links on Github or the command line git instructions below to clone the repo.
-```
-```sh
+
+
 $ git clone https://github.com/adplabs/adp-connection-java.git adp-connection-java
-```
+
 followed by either using command line or eclipse options to build the projects
 
 $ cd adp-connection-java
@@ -35,36 +35,8 @@ NOTE: certs bundled in libraries will only work for ADP Sandbox environment
       Refer ONE-TIME_CERTS_SETUP.md for jks key generation and cacerts update 
 
 ## Usage
-### Overview Library Organization 
-ADPConnection library  follow standard maven project structure
-    
-src/main/java 
-	- configuration - Configuration classes   
- 	- constants     - constants, enums 
- 	- core          - Connection classes 
- 	- exception     - Connection exceptions
- 	- utils         - Connection specific utils, validator utils, ssl utils
- 	- vo            - Value Objects
-
-src/main/resources 
- 	- certs	
- 		- ADPInternalChain.der
- 		- keystore.jks   
- 					
-src/test/java     
- 	- ADPConnection/ADPUserInfo - All Tests for library
- 	- core		                - tests for this component
- 	- utils                     - tests for utils 
- 
-client 		- sample apps using ADP libraries
-doc			- library API documentation
-lib			- library dependency jars 
-					 
-target     				- current library war/jar after maven builds
-LICENSE    				- Apache License
-ONE-TIME_CERTS_SETUP.md	- Java Key Store and Cacerts Update Instructions
-pom.xml     			- version, dependencies, build instructions, packaging info
-README.md   			- instructions for this library
+### Library Organization 
+ADPConnection library  follows standard maven project structure
 
 ### Integrate Libraries
 To integrate ADPConnection library to your Client Applications add ADPConnection.jar 
