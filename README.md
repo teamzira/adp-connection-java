@@ -28,13 +28,14 @@ $ mvn clean install -e
 
 Import the library to your Eclipse IDE workspace 
 
-find directory /client copy the client sample(s) to /workspace
+find folder /client in the library 
+copy the client sample(s) to /workspace/
 
-unzip the sample application(s)
+unzip the sample application(s) in /workspace/
 
-Import sample application(s) to Eclipse
+Finally, Import the unzipped sample application(s) to Eclipse
 
-Do a one time setup for client certificates 
+##Do a one time setup for client certificates 
  
 NOTE: 
 certs bundled in libraries will only work for ADP Sandbox environment
