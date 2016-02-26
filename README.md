@@ -1,18 +1,3 @@
-## ----------------------------------------------------------------------------
-##		Copyright © 2015-2016 ADP, LLC.   
-##	
-##		Licensed under the Apache License, Version 2.0 (the “License”); 
-##		you may not use this file except in compliance with the License.
-##		You may obtain a copy of the License at
-##	
-##		http://www.apache.org/licenses/LICENSE-2.0
-##	
-##		Unless required by applicable law or agreed to in writing, software 
-##		distributed under the License is distributed on an “AS IS” BASIS,
-##		WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  
-##  	See the License for the specific language governing permissions and 
-##  	limitations under the License.
-## ----------------------------------------------------------------------------
 
 # ADP Client Connection Library for Java
 The ADP Client Connection Library is intended to simplify and aid the process of authenticating, authorizing and connecting to the ADP Marketplace API Gateway. The Library includes couple of sample applications that can be run out-of-the-box to connect to the ADP Marketplace API **test** gateway.
@@ -172,7 +157,6 @@ ClientCredConnectionSampleApp - Stand Alone -  Provides sample app to use Connec
 Unzip the sample application and copy to {Home}/workspace/ so that sample apps can be run as individual modules 
 
 To setup, build and run the sample clients, please refer to README.md corresponding to AuthCodeConnectionSampleApp, ClientCredConnectionSampleApp
-```lisp
 
 ## API Documentation
 Documentation on the individual API calls
@@ -181,7 +165,7 @@ Library Documentation
 file://{HOME}/workspace/ADPConnection/doc/index.html
   
 To generate the documentation, please complete the following steps:
-```lisp
+
 ### Generate Docs Eclipse Editor
 Select ADPConnectionLibrary
 
@@ -213,7 +197,7 @@ Java Doc successfully generated in {HOME}/workspace/ADPConnection/doc
 
 **View Java Docs in a browser**
 file://{HOME}/workspace/ADPConnection/doc/index.html
-```
+
 Additional documentation can also be found on the [ADP Developer Portal](https://developers.adp.com).
 
 ## Tests
@@ -224,11 +208,10 @@ Automated unit tests are available in the src/main/test folder.
 Eclipse 
 	Right Click on pom.xml 
 		Select Run As -> Maven Test
-```
 
 ## Dependencies
 ADPConnection library depends on the following libraries.
-```lisp
+
 1.  commons-logging-1.2.jar
 2.  commons-lang3-3.4.jar
 3.  httpclient-4.5.1.jar
@@ -241,16 +224,15 @@ ADPConnection library depends on the following libraries.
 10. junit-4.12.jar
 11. hamcrest-core-1.3.jar
 12. slf4j-api-1.7.14.jar
-```
+
 
 ## Contributing
 To contribute to the library, please generate a pull request.  Before generating the pull request, please insure the following:
-```lisp
+
 1. Appropriate unit tests have been updated or created.
 2. Code coverage on unit tests must be no less than 95%.
 2. Your code updates have been fully tested and linted with no errors.
 3. Update README and API documentation as appropriate.
-```
 
 ## License
 [Apache 2](http://www.apache.org/licenses/LICENSE-2.0)
