@@ -38,7 +38,8 @@ Finally, Import the unzipped sample application(s) to Eclipse
 ##Do a one time setup for client certificates 
  
 NOTE: 
-certs bundled in libraries will only work for ADP Sandbox environment
+certificates bundled in libraries will only work for ADP Sandbox environment
+
 Refer ONE-TIME_CERTS_SETUP.md for jks key generation and cacerts update instructions
 
 ## Usage
@@ -59,13 +60,17 @@ Refer ONE-TIME_CERTS_SETUP.md for jks key generation and how to import to cacert
 **How to Use ADPConnection Library?**
 
 Initialize Configuration based on Grant type **client_credentials** or **authorization_code**
+
 Create Connection with initialized configuration
+
 Invoke connect() on Connection to get Access Token 
+
 Invoke getAccessToken() on Connection to obtain Access Token 
+
 Invoke getErrorResponse() on Connection to obtain error details in case of no Access Token
 	
 
-** Create Client Credentials Connection **
+### Create Client Credentials Connection ###
 
     // create an instance of ClientCredentialsConfiguration
     ClientCredentialsConfiguration connectionConfiguration = new ClientCredentialsConfiguration();
@@ -90,7 +95,7 @@ Invoke getErrorResponse() on Connection to obtain error details in case of no Ac
 	// alternate flow - no token in connection
 	String errorResponse  = clientCredentialsConnection.getErrorResponse()
 
-** Create Authorization Code Connection**
+### Create Authorization Code Connection ###
 
 	// create authorization code configuration object
 	AuthorizationCodeConfiguration authorizationCodeConfiguration = new AuthorizationCodeConfiguration();
