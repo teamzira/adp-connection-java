@@ -17,36 +17,42 @@ There are two ways of installing and using this library:
 You can either use the links on Github or the command line git instructions below to clone the repo.
 
 
-$ git clone https://github.com/adplabs/adp-connection-java.git adp-connection-java
+$ git clone https://github.com/adplabs/adp-connection-java.git
 
-followed by either using command line or eclipse options to build the projects
+followed by either using command line or eclipse IDE to build the projects
 
 $ cd adp-connection-java
+
 $ mvn clean install -e
 
-Import the library to your Eclipse IDE workspace -> find /client 
-copy the client sample(s) to /workspace
-unzip the sample application(s) 
-Import sample application(s) to eclipse
-    
+
+Import the library to your Eclipse IDE workspace 
+
+find directory /client copy the client sample(s) to /workspace
+
+unzip the sample application(s)
+
+Import sample application(s) to Eclipse
+
 Do a one time setup for client certificates 
  
-NOTE: certs bundled in libraries will only work for ADP Sandbox environment
-      Refer ONE-TIME_CERTS_SETUP.md for jks key generation and cacerts update 
+NOTE: 
+certs bundled in libraries will only work for ADP Sandbox environment
+Refer ONE-TIME_CERTS_SETUP.md for jks key generation and cacerts update instructions
 
 ## Usage
 ### Library Organization 
-ADPConnection library  follows standard maven project structure
+ADPConnection library follows standard maven project structure
+
 
 ### Integrate Libraries
-To integrate ADPConnection library to your Client Applications add ADPConnection.jar 
-to your classpath and use the library API's.
+To integrate ADPConnection library to your Client Applications add ADPConnection.jar to your classpath and use the library API's.
 
-Client Applications that use these libraries would have to acquire certificates from     
-ADP by submitting CSR signing request.
+Client Applications that use these libraries would have to acquire certificates from ADP by submitting CSR signing request.
 
-NOTE: certs bundled in libraries will only work for ADP Sandbox environment
-Refer ONE-TIME_CERTS_SETUP.md for jks key generation and how to import to cacerts
+NOTE: 
+certs bundled in libraries will only work for ADP Sandbox environment
+Refer ONE-TIME_CERTS_SETUP.md for jks key generation and how to import to cacerts instructions
 
 
 **How to Use ADPConnection Library?**
@@ -144,23 +150,28 @@ Select ADPConnectionLibrary
 Select Project from menu bar and click **Generate Javadoc**
 
 A pop up window opens with few options 
-**Configure JavaDoc Command** to point to your machines JAVA_HOME/Contents/Home/bin/ javadoc
-Ex:	/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/bin/javadoc
-**Create Javadoc with members with visibility 
-Select public
-**Use standard Doculet**
-Destination {HOME}/workspace/ADPConnection/doc	
 
-Click Next
-**Provide Document Title** ADPConnection API Docs
+
+**Configure JavaDoc Command** to point to your machines JAVA_HOME/Contents/Home/bin/ javadoc
+
+Ex:	/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/bin/javadoc
+
+**Create Javadoc with members with visibility** Select public
+
+**Use standard Doculet** Destination {HOME}/workspace/ADPConnection/doc	
+
+Click Next **Provide Document Title** ADPConnection API Docs
+
 **Basic Options** Choose Default options
 
 Click Next
+
 **Configure Javadoc arguments** 
 
-Check Overview -> Browse to point to
-	{HOME}/ADPConnection/doc/index.html
-Verify JRE source compatibility
+Check Overview -> Browse to point to {HOME}/ADPConnection/doc/index.html
+
+Verify JRE source compatibility 
+
 Check Open generated index file in browser
 
 Click Finish
@@ -168,6 +179,7 @@ Click Finish
 Java Doc successfully generated in {HOME}/workspace/ADPConnection/doc	
 
 **View Java Docs in a browser**
+
 file://{HOME}/workspace/ADPConnection/doc/index.html
 
 Additional documentation can also be found on the [ADP Developer Portal](https://developers.adp.com).
@@ -175,11 +187,12 @@ Additional documentation can also be found on the [ADP Developer Portal](https:/
 ## Tests
 Automated unit tests are available in the src/main/test folder.  
 
-> mvn test
+$ mvn test
 
-Eclipse 
-	Right Click on pom.xml 
-		Select Run As -> Maven Test
+###Eclipse 
+
+Right Click on pom.xml 
+Select Run As -> Maven Test
 
 ## Dependencies
 ADPConnection library depends on the following libraries.
