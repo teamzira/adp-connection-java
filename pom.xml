@@ -27,7 +27,7 @@
  	<packaging>jar</packaging>
 
 	<name>ADPConnection</name>
-  	<url>https://github.com/adplabs/adp-connection-java.git adp-connection-java</url>
+  	<url>https://github.com/adplabs/adp-connection-java.git</url>
 	<description>ADP Connection Library</description>
 
 	<organization>
@@ -57,17 +57,16 @@
 	
 	<distributionManagement>
     	<repository>
-      		<id>ADP-repository</id>
-      		<name>ADP Marketplace Release Distribution Repository</name>
-      		<!-- TODO -->
+      		<!-- <id>ADP-repository</id> -->
+      		<!-- <name>ADP Marketplace Release Distribution Repository</name> -->
       		<!-- <url>https://repository.adp.com/repository/maven2</url> -->
     	</repository>
- 
+ 		<!-- 
     	<site>
       		<id>ADP Website</id>
       		<name>ADP API Documentation Website</name>
       		<url></url>
-    	</site>	
+    	</site>	-->
   	</distributionManagement>
 
 	<issueManagement>
@@ -75,29 +74,17 @@
 		<url>https://partnersupport.adp.com</url>
 	</issueManagement>
 	
-	<!-- TODO -->
 	<repositories>
-		<repository>
-	      <releases>
-	        <enabled>false</enabled>
-	      </releases>
-	      <id>adp-libraries.snapshots</id>
-	      <name>ADP-Libraries Snapshot Repository</name>
-	      <!-- TODO -->
-	      <url>http://repository.ADP.com/snapshots</url>
-	    </repository>
-	  
 	   <!-- ADP Github repository details --> 
-	   <!-- 
 	   	<repository>
 	      <snapshots>
 	        <enabled>false</enabled>
 	      </snapshots>
 	      <id>ADP Central Repo</id>
 	      <name>ADP Central Repository</name>
-	      <url>https://repo.adp.XXX.com/XXXX</url>
+	      <url>https://github.com/adplabs/adp-connection-java</url>
 	    </repository>
-	    -->
+	    
 	</repositories>
 	
 	<properties>
