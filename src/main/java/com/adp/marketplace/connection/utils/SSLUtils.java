@@ -155,7 +155,7 @@ public class SSLUtils {
 			httpclient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
 			
 		} catch (Exception e) {
-			throw new Exception("Exception processing SSL Context!");
+			throw new ConnectionException(e);
 		}
 		
 		return httpclient;

@@ -93,6 +93,8 @@ public class ClientCredentialsConnection implements ADPAPIConnection {
 		int responseStatusCode;
 		
 		Token token = null;
+		
+		StringBuffer sb = null;
 		CloseableHttpClient httpClient = null;
 		CloseableHttpResponse httpResponse = null;
 		
@@ -140,7 +142,16 @@ public class ClientCredentialsConnection implements ADPAPIConnection {
 							     responseStatusCode == Constants.HTTP_CLIENT_INVALID ||
 							     responseStatusCode == Constants.HTTP_SERVER_ERROR )  {
 								
-								 this.errorResponse = ConnectionUtils.processResponse(httpResponse);
+								this.errorResponse = ConnectionUtils.processResponse(httpResponse);
+								
+								String httpStatusLine = httpResponse.getStatusLine().toString();
+								if ( StringUtils.isNotBlank(httpStatusLine)) {
+									 
+									 sb = new StringBuffer( httpStatusLine )
+										 			.append(" ")
+										 			.append(errorResponse);
+								 	this.errorResponse = sb.toString();
+								 }
 							}
 					}
 				}

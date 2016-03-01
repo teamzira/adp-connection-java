@@ -103,6 +103,7 @@ public class AuthorizationCodeConnection implements ADPAPIConnection {
 	public void connect() throws ConnectionException {
 
 		int responseStatusCode;
+		StringBuffer sb = null;
 		CloseableHttpClient httpClient = null;
 		CloseableHttpResponse httpResponse = null;
 		
@@ -150,6 +151,14 @@ public class AuthorizationCodeConnection implements ADPAPIConnection {
 						     responseStatusCode == Constants.HTTP_SERVER_ERROR )  {
 							
 							 this.errorResponse = ConnectionUtils.processResponse(httpResponse);
+							 String httpStatusLine = httpResponse.getStatusLine().toString();
+							 if ( StringUtils.isNotBlank(httpStatusLine)) {
+								 
+								 sb = new StringBuffer( httpStatusLine )
+									 			.append(" ")
+									 			.append(errorResponse);
+							 	this.errorResponse = sb.toString();
+							 }
 						}
 					}
 				}
