@@ -1,5 +1,5 @@
-
 ## ADP Client Connection Library for Java
+
 The ADP Client Connection Library is intended to simplify and aid the process of authenticating, authorizing and connecting to the ADP Marketplace API Gateway. The Library includes couple of sample applications that can be run out-of-the-box to connect to the ADP Marketplace API **test** gateway.
 
 There are two ways of installing and using this library:
@@ -8,14 +8,13 @@ There are two ways of installing and using this library:
   - Maven dependency: When you are ready to use the library in your own application use this method to add as Maven dependency
 
 ### Version
-1.0.0
+Beta
 
 ### Installation
 
 **Clone from Github**
 
 You can either use the links on Github or the command line git instructions below to clone the repo.
-
 
 $ git clone https://github.com/adplabs/adp-connection-java.git
 
@@ -26,21 +25,13 @@ $ cd adp-connection-java
 $ mvn clean install -e
 
 
-Import the library to your Eclipse IDE workspace 
-
-find folder /client in the library 
-copy the client sample(s) to /workspace/
-
-unzip the sample application(s) in /workspace/
-
-Finally, Import the unzipped sample application(s) to Eclipse
-
-##Do a one time setup for client certificates 
+## Do a one time setup for client certificates 
  
 NOTE: 
-certificates bundled in libraries will only work for ADP Sandbox environment
 
-Refer ONE-TIME_CERTS_SETUP.md for jks key generation and cacerts update instructions
+Certificates bundled in libraries will only work for ADP Sandbox environment
+
+Refer ONE-TIME_CERTS_SETUP.md for jks key generation and cacerts import instructions
 
 ## Usage
 ### Library Organization 
@@ -48,12 +39,14 @@ ADPConnection library follows standard maven project structure
 
 
 ### Integrate Libraries
-To integrate ADPConnection library to your Client Applications add ADPConnection.jar to your classpath and use the library API's.
+To integrate ADPConnection library to your Client Applications add ADPConnection.jar to your project classpath and use the library API's.
 
 Client Applications that use these libraries would have to acquire certificates from ADP by submitting CSR signing request.
 
 NOTE: 
-certs bundled in libraries will only work for ADP Sandbox environment
+
+Certificates bundled in libraries will only work for ADP Sandbox environment
+
 Refer ONE-TIME_CERTS_SETUP.md for jks key generation and how to import to cacerts instructions
 
 
@@ -67,7 +60,7 @@ Invoke connect() on Connection to get Access Token
 
 Invoke getAccessToken() on Connection to obtain Access Token 
 
-Invoke getErrorResponse() on Connection to obtain error details in case of no Access Token
+Invoke getErrorResponse() on Connection to obtain error details in case of Access Token not returned
 	
 
 ### Create Client Credentials Connection ###
@@ -92,7 +85,7 @@ Invoke getErrorResponse() on Connection to obtain error details in case of no Ac
 	// at this time this connection must have token
 	Token token = clientCredentialsConnection.getToken()
 	
-	// alternate flow - no token in connection
+	// alternate flow - no token returned in connection
 	String errorResponse  = clientCredentialsConnection.getErrorResponse()
 
 ### Create Authorization Code Connection ###
@@ -127,30 +120,47 @@ Invoke getErrorResponse() on Connection to obtain error details in case of no Ac
 	// at this time this connection must have token info
 	Token token = authorizationCodeConnection.getToken();
 
-	// alternate flow - no token in connection 
+	// alternate flow - no token returned in connection 
 	errorMessage = authorizationCodeConnection.getErrorResponse();
 
 
 ## Sample Client
-Two sample clients are provided to demonstrate usage of the libraries.  The sample client connects to a sandbox environment hosted by ADP, and comes preconfigured with the necessary credentials and certificates to connect to the sandbox server.
 
-AuthCodeConnectionSampleApp - Web Application - web app that uses ADPConnection library to obtain a connection based on grant type Authorization Code 
+Two sample clients are provided to demonstrate usage of the libraries. The sample client connects to a sandbox environment hosted by ADP, and comes pre-configured with the necessary credentials and certificates to connect to the sandbox server.
+
+AuthCodeConnectionSampleApp - Web Application - Web application that uses ADPConnection library to obtain a connection based on grant type Authorization Code 
                                                  
-ClientCredConnectionSampleApp - Stand Alone -  Provides sample app to use Connection based on grant type Client Credentials     
+ClientCredConnectionSampleApp - Stand Alone -  Is a sample application that uses ADPConnection library to obtain Connection based on grant type Client Credentials     
 
-Unzip the sample application and copy to {Home}/workspace/ so that sample apps can be run as individual modules 
+## Client Setup
+
+Find folder /client in the adp-connection-java library 
+
+Copy the client sample(s) to {Home}/workspace/
+
+$ cp adp-connection-java/client/AuthCodeConnectionSampleApp.zip .	
+$ cp adp-connection-java/client/ClientCredConnectionSampleApp.zip . 
+
+Unzip the sample application(s) in {Home}/workspace/ so that sample applications can be run as individual modules 
+ 	
+$ tar -xvzf AuthCodeConnectionSampleApp.zip
+$ tar -xvzf ClientCredConnectionSampleApp.zip 
+
+Finally, Import the sample application(s) to Eclipse to run client applications
 
 To setup, build and run the sample clients, please refer to README.md corresponding to AuthCodeConnectionSampleApp, ClientCredConnectionSampleApp
 
 ## API Documentation
+
 Documentation on the individual API calls
 
 Library Documentation
-file://{HOME}/workspace/ADPConnection/doc/index.html
+file://{HOME}/workspace/adp-connection-java/doc/index.html
   
 To generate the documentation, please complete the following steps:
 
 ### Generate Docs Eclipse Editor
+
 Select ADPConnectionLibrary
 
 Select Project from menu bar and click **Generate Javadoc**
@@ -158,23 +168,23 @@ Select Project from menu bar and click **Generate Javadoc**
 A pop up window opens with few options 
 
 
-**Configure JavaDoc Command** to point to your machines JAVA_HOME/Contents/Home/bin/ javadoc
+**Configure JavaDoc Command** to point to your machines JAVA_HOME/Contents/Home/bin/javadoc
 
-Ex:	/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/bin/javadoc
+Ex:	/Library/Java/JavaVirtualMachines/${jdk_version.jdk}/Contents/Home/bin/javadoc
 
 **Create Javadoc with members with visibility** Select public
 
 **Use standard Doculet** Destination {HOME}/workspace/ADPConnection/doc	
 
-Click Next **Provide Document Title** ADPConnection API Docs
+Check 'Document title' checkbox 
+
+Click Next **Provide Document Title** 'ADPConnection API Docs'
 
 **Basic Options** Choose Default options
 
 Click Next
 
 **Configure Javadoc arguments** 
-
-Check Overview -> Browse to point to {HOME}/ADPConnection/doc/index.html
 
 Verify JRE source compatibility 
 
@@ -190,17 +200,21 @@ file://{HOME}/workspace/ADPConnection/doc/index.html
 
 Additional documentation can also be found on the [ADP Developer Portal](https://developers.adp.com).
 
+
 ## Tests
+
 Automated unit tests are available in the src/main/test folder.  
 
 $ mvn test
 
-###Eclipse 
+### Eclipse 
 
-Right Click on pom.xml 
+Right Click on pom.xml
+
 Select Run As -> Maven Test
 
 ## Dependencies
+
 ADPConnection library depends on the following libraries.
 
 1.  commons-logging-1.2.jar
@@ -218,11 +232,12 @@ ADPConnection library depends on the following libraries.
 
 
 ## Contributing
+
 To contribute to the library, please generate a pull request.  Before generating the pull request, please insure the following:
 
-1. Appropriate unit tests have been updated or created.
-2. Code coverage on unit tests must be no less than 95%.
-2. Your code updates have been fully tested and linted with no errors.
+1. Appropriate unit tests have been updated or created on all public methods validating the success flows, error, exception conditions. 
+   In  addition, verify and validate logic inside protected/private methods through tests written for public methods
+2. Your code updates have been fully tested and compiled with no errors.
 3. Update README and API documentation as appropriate.
 
 ## License

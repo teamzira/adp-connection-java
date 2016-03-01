@@ -86,7 +86,6 @@ public class ConnectionValidatorUtils {
 		
 		if ( connectionConfiguration == null ) {
 			//valid = false;
-			//TODO - Log and verify exception
 			throw new ConnectionValidatorException("Connection Configuration is Not Set in request!!");
 		}
 		
@@ -154,7 +153,6 @@ public class ConnectionValidatorUtils {
 		
 		if ( connectionConfiguration == null ) {
 			//valid = false;
-			//TODO - Log and verify exception
 			throw new ConnectionValidatorException("Connection Configuration is Not Set in request!!");
 		}
 		
@@ -186,7 +184,6 @@ public class ConnectionValidatorUtils {
 		
 		if ( connectionConfiguration == null ) {
 			//valid = false;
-			//TODO - Log and verify exception
 			throw new ConnectionValidatorException("Connection Configuration is "
 					+ "Not Set in request!!");
 		}
@@ -221,15 +218,12 @@ public class ConnectionValidatorUtils {
 		
 		boolean valid = true;
 		
-		//TODO - verify handle error or do what?
 		if ( connectionConfiguration == null ) {
 			//valid = false;
-			//TODO - Log and verify exception
 			throw new ConnectionValidatorException("Connection Configuration "
 					+ "is Not Set in request!!");
 		}
 		
-		//TODO - verify required fileds and handle error or do what?
 		if ( StringUtils.isBlank(connectionConfiguration.getBaseAuthorizationUrl()) ||
 			 StringUtils.isBlank(connectionConfiguration.getRedirectUrl()) || 
 			 StringUtils.isBlank(connectionConfiguration.getClientID()) ||
@@ -256,7 +250,6 @@ public class ConnectionValidatorUtils {
 		
 		if ( connectionConfiguration == null ) {
 			//valid = false;
-			//TODO - Log and verify exception
 			throw new ConnectionValidatorException("Connection Configuration is Not Set in request!!");
 		}
 		
@@ -293,7 +286,6 @@ public class ConnectionValidatorUtils {
 				StringUtils.isBlank(connectionConfiguration.getStorePassword()) ||
 				StringUtils.isBlank(connectionConfiguration.getKeyPassword()) ) {
 			//valid = false;
-			//TODO - Log and verify exception
 			throw new ConnectionValidatorException("One or more key SSL attributes are missing in request!!");
 		}
 	
@@ -319,8 +311,7 @@ public class ConnectionValidatorUtils {
 		
 		if ( StringUtils.isBlank(connectionConfiguration.getTokenServerUrl()) ) {
 			//valid = false;
-			//TODO - Log and verify exception
-			throw new ConnectionValidatorException("Token URL is null or empty!" );
+			throw new ConnectionValidatorException("Token URL is null or empty!");
 		}
 	
 		return valid;

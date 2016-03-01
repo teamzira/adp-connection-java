@@ -55,6 +55,11 @@
 		</developer>
 	</developers>
 	
+	<issueManagement>
+		<system></system>
+		<url></url>
+	</issueManagement>
+	
 	<distributionManagement>
     	<repository>
       		<!-- <id>ADP-repository</id> -->
@@ -67,12 +72,7 @@
       		<name>ADP API Documentation Website</name>
       		<url></url>
     	</site>	-->
-  	</distributionManagement>
-
-	<issueManagement>
-		<system>Zendesk</system>
-		<url>https://partnersupport.adp.com</url>
-	</issueManagement>
+  	</distributionManagement>	
 	
 	<repositories>
 	   <!-- ADP Github repository details --> 

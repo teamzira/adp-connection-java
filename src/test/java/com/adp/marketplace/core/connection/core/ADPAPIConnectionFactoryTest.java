@@ -72,11 +72,12 @@ public class ADPAPIConnectionFactoryTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		instance = null;
 	}
 
 	/**
 	 * 
-	 * verifies that a singleton instance is created
+	 * verifies that a singleton instance is created for ADPAPIConnectionFactory
 	 */
 	@Test
 	public void singletonInstanceCreated() {

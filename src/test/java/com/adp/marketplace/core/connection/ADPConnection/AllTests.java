@@ -21,6 +21,9 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
+import com.adp.marketplace.connection.utils.ConnectionUtilsTest;
+import com.adp.marketplace.connection.utils.ConnectionValidatorUtilsTest;
+import com.adp.marketplace.connection.utils.SSLUtils;
 import com.adp.marketplace.core.connection.core.ADPAPIConnectionFactoryTest;
 import com.adp.marketplace.core.connection.core.AuthorizationCodeConnectionTest;
 import com.adp.marketplace.core.connection.core.ClientCredentialsConnectionTest;
@@ -32,7 +35,8 @@ import com.adp.marketplace.core.connection.core.ClientCredentialsConnectionTest;
  */
 @RunWith(Suite.class)
 @SuiteClasses({ ADPAPIConnectionFactoryTest.class,
-	AuthorizationCodeConnectionTest.class, ClientCredentialsConnectionTest.class})
+	AuthorizationCodeConnectionTest.class, ClientCredentialsConnectionTest.class, 
+	SSLUtils.class, ConnectionUtilsTest.class, ConnectionValidatorUtilsTest.class})
 public class AllTests {
 
 } 

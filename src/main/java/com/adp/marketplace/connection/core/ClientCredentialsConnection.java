@@ -110,10 +110,6 @@ public class ClientCredentialsConnection implements ADPAPIConnection {
 			
 				ConnectionUtils connectionInstance = ConnectionUtils.getInstance();
 				
-				//TODO - TEST
-				//build Client Credentials for request mapping 
-				//List<NameValuePair> nameValuePairs = connectionInstance.getClientCredentials(connectionConfiguration);
-				
 				List<NameValuePair> nameValuePairs = connectionInstance.getNameValuePairs(this);
 			
 				//map Client credentials and grant types to post request
