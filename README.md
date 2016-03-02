@@ -69,12 +69,12 @@ Invoke getErrorResponse() on Connection to obtain error details in case of Acces
     ClientCredentialsConfiguration connectionConfiguration = new ClientCredentialsConfiguration();
     
     // map properties
-    Properties properties = ClientUtils.getInstance().getConfigProperties();
-    ClientUtils.getInstance().mapPropertiesToClientCredentialsConfiguration(properties, connectionConfiguration);
+    Properties properties = CLIENT_UTILS_INSTANCE.getConfigProperties();
+    CLIENT_UTILS_INSTANCE.getConfigProperties().mapPropertiesToClientCredentialsConfiguration(properties, connectionConfiguration);
    
     // create connection
     clientCredentialsConnection = (ClientCredentialsConnection) 
-						ADPAPIConnectionFactory.getInstance().createConnection(connectionConfiguration);
+		CONNECTION_FACTORY_INSTANCE.createConnection(connectionConfiguration);
 						
 	// set connection configuration object on connection
 	clientCredentialsConnection.setConnectionConfiguration(connectionConfiguration);
@@ -90,24 +90,23 @@ Invoke getErrorResponse() on Connection to obtain error details in case of Acces
 
 ### Create Authorization Code Connection ###
 
-	// create authorization code configuration object
-	AuthorizationCodeConfiguration authorizationCodeConfiguration = new AuthorizationCodeConfiguration();
+	    // create authorization code configuration object    
+    AuthorizationCodeConfiguration authorizationCodeConfiguration = new AuthorizationCodeConfiguration();
 				
 	// get authorization code configuration properties 
-	Properties properties = com.adp.marketplace.demo.client.auth.authcode.utils.ClientUtils.getInstance().getConfigProperties();
+	Properties properties = CLIENT_UTILS_INSTANCE..getInstance().getConfigProperties();
 
 	// populate authorization code configuration 
-	com.adp.marketplace.demo.client.auth.authcode.utils.ClientUtils.getInstance()
-		.mapPropertiesToAuthCodeConfiguration(properties,  authorizationCodeConfiguration);
+	CLIENT_UTILS_INSTANCE.mapPropertiesToAuthCodeConfiguration(properties,  authorizationCodeConfiguration);
 				
 	// get ADP connection using configuration above
-	authorizationCodeConnection = (AuthorizationCodeConnection) ADPAPIConnectionFactory.getInstance().
-		createConnection(authorizationCodeConfiguration); 			
+	authorizationCodeConnection = (AuthorizationCodeConnection) 
+			CONNECTION_FACTORY_INSTANCE.createConnection(authorizationCodeConfiguration); 			
 		
 	// get Url from authorization connection
 	authorizationUrl = "redirect:" + authorizationCodeConnection.getAuthorizationUrl();
 
-	// callback snippets
+	// callback code snippet
 	String requestCode = (String) request.getParameter("code");
 	String callBackRequestError = (String) request.getParameter("error");
 	
@@ -120,8 +119,8 @@ Invoke getErrorResponse() on Connection to obtain error details in case of Acces
 	// at this time this connection must have token info
 	Token token = authorizationCodeConnection.getToken();
 
-	// alternate flow - no token returned in connection 
-	errorMessage = authorizationCodeConnection.getErrorResponse();
+	// alternate flow - no token in connection
+	errorMessage =  authorizationCodeConnection.getErrorResponse();
 
 
 ## Sample Client
