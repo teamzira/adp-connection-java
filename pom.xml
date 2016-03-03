@@ -55,9 +55,15 @@
 		</developer>
 	</developers>
 	
+	<scm>
+   		<connection>scm:git:git@github.com:adplabs/adp-connection-java.git</connection>
+    	<developerConnection>scm:git:git@github.com:adplabs/adp-connection-java.git</developerConnection>
+    	<url>git@github.com:adplabs/adp-connection-java.git</url>
+  	</scm>
+	
 	<issueManagement>
-		<system></system>
-		<url></url>
+		<url>https://github.com/adplabs/adp-connection-java/issues</url>
+		<system>ADPConnection Library GitHub Issues</system>
 	</issueManagement>
 	
 	<distributionManagement>
