@@ -23,7 +23,7 @@
 
 	<groupId>com.adp.marketplace.connection</groupId>
 	<artifactId>ADPConnection</artifactId>
-	<version>1.0.0</version>
+	<version>0.0.1-Beta</version>
  	<packaging>jar</packaging>
 
 	<name>ADPConnection</name>
