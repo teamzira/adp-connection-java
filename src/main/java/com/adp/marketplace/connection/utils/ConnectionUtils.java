@@ -234,10 +234,10 @@ public class ConnectionUtils {
 	public static String processResponse(CloseableHttpResponse httpResponse) 
 		throws Exception {
 			
-		String line = "";
 		String response = null;
 		StringBuffer stringBuffer = null;
 		InputStreamReader inputStreamReader = null;
+		int value=0;
 		
 		if ( httpResponse != null ) {
 			
@@ -247,10 +247,12 @@ public class ConnectionUtils {
 				BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 			
 				stringBuffer = new StringBuffer();
-				while ( (line = bufferedReader.readLine()) != null ) {
-					stringBuffer.append(line);
-				}
 				
+				// reads to the end of the stream 
+		         while((value = bufferedReader.read()) != -1) {		        	 
+		            // add character
+		            stringBuffer.append((char)value);
+		         }				
 			} catch ( UnsupportedOperationException e ) {
 				throw new Exception(e);
 			} catch ( IOException e ) {
