@@ -109,7 +109,8 @@ public class ClientCredentialsConnection implements ADPAPIConnection {
 			
 				//create POST request to acquire access token
 				HttpPost post = new HttpPost(connectionConfiguration.getTokenServerUrl().trim());
-			
+				post.addHeader("User-Agent", Constants.CONNECTION_USER_AGENT);
+				
 				ConnectionUtils connectionInstance = ConnectionUtils.getInstance();
 				
 				List<NameValuePair> nameValuePairs = connectionInstance.getNameValuePairs(this);
