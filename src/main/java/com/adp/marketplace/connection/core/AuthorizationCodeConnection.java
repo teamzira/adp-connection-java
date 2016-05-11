@@ -22,11 +22,13 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.http.Header;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.params.CoreProtocolPNames;
 
 import com.adp.marketplace.connection.configuration.AuthorizationCodeConfiguration;
 import com.adp.marketplace.connection.configuration.ConnectionConfiguration;
@@ -113,14 +115,14 @@ public class AuthorizationCodeConnection implements ADPAPIConnection {
 			boolean isValid = validatorInstance.validateAuthCodeTokenRequest(
 					(AuthorizationCodeConfiguration) this.getConnectionConfiguration());
 			
-			if ( isValid ) {
-				
+			if ( isValid ) {				
 				//create a https client
-				httpClient = SSLUtils.getInstance().getHttpsClient(connectionConfiguration);
+				httpClient = SSLUtils.getInstance().getHttpsClient(connectionConfiguration);				
 			
 				//create POST request to acquire access token
 				HttpPost post = new HttpPost(connectionConfiguration.getTokenServerUrl().trim());
-			
+				post.addHeader("User-Agent", Constants.CONNECTION_USER_AGENT);
+				
 				List<NameValuePair> nameValuePairs = ConnectionUtils.getInstance().getNameValuePairs(this);
 			
 				//map Client credentials and grant types to post request

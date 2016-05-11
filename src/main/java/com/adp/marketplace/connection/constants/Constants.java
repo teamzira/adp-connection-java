@@ -34,6 +34,10 @@ public interface Constants {
 	public static final int HTTP_CLIENT_ERROR = 400;
 	public static final int HTTP_CLIENT_INVALID = 401;
 	public static final int HTTP_SERVER_ERROR = 500;
+	
+	// User Agents
+	public static final String CONNECTION_USER_AGENT = "adp-connection-java/1.0.0";
+	public static final String USERINFO_USER_AGENT = "adp-userinfo-java/1.0.0";
 
 	public static final String AMPERSAND = "&";
 	public static final String QUESTION = "?";
